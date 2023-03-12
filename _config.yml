@@ -20,8 +20,8 @@
 
 title:            'Wax'
 description:      'Minimal Exhibitions with Jekyll'
-url:              'https://minicomp.github.io'
-baseurl:          '/wax'
+url:              'https://archaeoklammt.github.io'
+baseurl:          '/my_first_wax_site'
 copyright:        'Example copyright org, 2019'
 logo:             '/assets/logo.png'
 
@@ -65,13 +65,13 @@ kramdown:
 collections:
   exhibits:
     output: true
-  qatar: # name of collection
+  wax_test: # name of collection
     output: true # makes sure pages are output as html files
     layout: 'qatar_item' # the layout for the pages to use
     metadata:
-      source: 'qatar.csv' # path to the metadata file within `_data`
+      source: 'documents.csv' # path to the metadata file within `_data`
     images:
-      source: 'raw_images/qatar' # path to the directory of images within `_data`
+      source: 'raw_images/wax_test' # path to the directory of images within `_data`
 
 # --------------------------------------------------------------
 # SEARCH INDEX SETTINGS
@@ -85,15 +85,16 @@ search:
   main:
     index: '/search/index.json' # file the index will get written to
     collections:
-      qatar:
+      wax_test:
         content: false # whether or not to index page content
         fields: # the metadata fields to index
-          - artist
-          - location
-          - label
-          - _date
-          - object_type
-          - current_location
+          - artist_name
+          - title_english
+          - _date_artwork
+          - medium_artwork
+          - technique_artwork
+          - current_location_artwork
+          - type_artwork
 
 # --------------------------------------------------------------
 # SITE MENU SETTINGS
@@ -103,14 +104,6 @@ search:
 # submenu via `sub`.
 
 menu:
-  - label: 'About'
-    sub:
-      - label: 'Wax'
-        link: '/about/'
-      - label: 'Documentation'
-        link: 'https://minicomp.github.io/wiki/wax/'
-      - label: 'Credits'
-        link: '/credits/'
   - label: 'Exhibits'
     sub:
       - label: 'Inline Parallax Image'
@@ -121,8 +114,6 @@ menu:
     link: '/collection/'
   - label: 'Search'
     link: '/search/'
-  - label: 'Reuse'
-    link: '/reuse/'
 
 # --------------------------------------------------------------
 # SITE FOOTER SETTINGS
